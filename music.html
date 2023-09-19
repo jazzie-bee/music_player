@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9db0402647.js" crossorigin="anonymous"></script>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <audio src="" id="audio"></audio>
+
+    <div class="wrapper">
+        <div class="player">
+
+            <div class="details">
+                <div class="img"></div>
+                <div class="title">Song Title</div>
+                <div class="artist">Track Artist</div>
+            </div>
+
+            <div class="slider">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+
+            <div class="buttons">
+                <div class="prev" onclick="prevTrack()">
+                    <i class="fa-solid fa-backward fa-2x"></i>
+                </div>
+                <div class="playpause" onclick="playTrack()">
+                    <i class="fa-regular fa-circle-play fa-4x" onclick="changeIcon(this)"></i>
+                    <!-- <i class="fa-regular fa-circle-pause"></i> -->
+                </div>
+                <div class="next" onclick="nextTrack()">
+                    <i class="fa-solid fa-forward fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+
+    <footer>
+        <a href="" class="img">Images from Unsplash</a>
+        <a href="" class="music">Music from Pixabay</a>
+    </footer>
+</body>
+
+</html>

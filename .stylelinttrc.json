@@ -1,0 +1,22 @@
+{
+    "rules": {
+        "alpha-value-notation": "number",
+        "selector-type-case": "lower",
+        "color-no-hex": true,
+        "declaration-property-unit-allowed-list": {
+            "/^border/": [
+                "px"
+            ],
+            "/^padding|^gap/": [
+                "rem"
+            ]
+        },
+        "unit-allowed-list": [
+            "%",
+            "deg",
+            "px",
+            "rem",
+            "ms"
+        ]
+    }
+}

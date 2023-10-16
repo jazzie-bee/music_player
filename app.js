@@ -29,14 +29,14 @@ const setMusic = (i) => {
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
-    cover.style.backgroundImage = 'url('${song.cover}')';
+    cover.style.backgroundImage = 'url(';{song.cover}')';
 }
 
 // Button functions
 function playPause(){
     if(ctrlIcon.classList.contains('fa-pause')){
         song.pause();
-        ctrlIcon.classList.remove()
+        ctrlIcon.classList.remove();
     }
     else{
         song.play();

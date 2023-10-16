@@ -1,23 +1,44 @@
 let currentMusic = 0;
 
-// select audio source
+// Audio source
 const music = document.querySelector('#audio');
 
-// select everything that needs behaviors. I.e. song info needs to change w/ audio, slide seeker, timestamps and images need to change
+// Select everything that needs behaviors. I.e. song info needs to change w/ audio, slide seeker, timestamps and images need to change & play/pause icons
 const seekSlider = document.querySelector('.seek-slider');
-const title = document.querySelector('.title');
+const songName = document.querySelector('.song-name');
 const trackArtist = document.querySelector('.track-artist');
-const trackArt = document.querySelector('.track-art');
+const trackCover = document.querySelector('.cover');
 const currentTime = document.querySelector('.current-time');
 const totalDuration = document.querySelector('.total-duration')
-const playBtn = document.querySelector('.playpause');
+const playBtn = document.querySelector('.play-pause');
 const forwardBtn = document.querySelector('.next');
 const backwardBtn = document.querySelector('.prev');
 
-// use click event to buttons. eventListners */ 
-playBtn.addEventListener('click', () => {
-    playBtn.classList.toggle('pause');
-    trackArt.classList.toggle('play');
-})
+// use click event for contorls. eventListners */ 
+// playBtn.addEventListener('click', () => {
+//     playBtn.classList.toggle('pause');
+//     trackArt.classList.toggle('play');
+// })
 
-//setup music
+//Setup music
+const setMusic = (i) => {
+    seekBar.value = 0;
+    let song = song[i];
+    currentMusic = i;
+    music.src = song.path;
+
+    songName.innerHTML = song.name;
+    artistName.innerHTML = song.artist;
+    cover.style.backgroundImage = 'url('${song.cover}')';
+}
+
+// Button functions
+function playPause(){
+    if(ctrlIcon.classList.contains('fa-pause')){
+        song.pause();
+        ctrlIcon.classList.remove()
+    }
+    else{
+        song.play();
+    }
+}

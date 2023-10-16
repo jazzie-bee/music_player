@@ -16,9 +16,9 @@
     <div class="wrapper">
         <div class="player">
 
-            <div class="details">
-                <div class="img"></div>
-                <div class="title">Song Title</div>
+            <div class="music-info">
+                <div class="cover"></div>
+                <div class="song-name">Song Title</div>
                 <div class="artist">Track Artist</div>
             </div>
 
@@ -28,13 +28,13 @@
                 <div class="total-duration">00:00</div>
             </div>
 
-            <div class="buttons">
+            <div class="controls">
                 <div class="prev" onclick="prevTrack()">
                     <i class="fa-solid fa-backward fa-2x"></i>
                 </div>
-                <div class="playpause" onclick="playTrack()">
-                    <i class="fa-regular fa-circle-play fa-4x" onclick="changeIcon(this)"></i>
-                    <!-- <i class="fa-regular fa-circle-pause"></i> -->
+                <div class="play-pause" onclick="playTrack()">
+                    <i class="fa-regular fa-circle-play fa-4x" id="ctrlIcon" onclick="PlayPause();"></i>
+                    <!-- <i class="fa-regular fa-circle-pause fa-4x"></i> -->
                 </div>
                 <div class="next" onclick="nextTrack()">
                     <i class="fa-solid fa-forward fa-2x"></i>
@@ -47,8 +47,10 @@
     <script src="app.js"></script>
 
     <footer>
-        <a href="" class="img">Images from Unsplash</a>
-        <a href="" class="music">Music from Pixabay</a>
+        <nav>
+            <a href="" class="unsplash">Images from Unsplash</a>            
+            <a href="" class="pixabay">Music from Pixabay</a>
+        </nav>
     </footer>
 </body>
 

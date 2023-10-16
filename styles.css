@@ -18,7 +18,8 @@ body {
     width: 100vw;
 }
 
-i {
+div > i {
+    color: black;
     cursor: pointer;
 }
 
@@ -63,7 +64,6 @@ i {
 }
 
 .seek-slider {
-    appearance: none;
     background: #656363;
     border-radius: 10px;
     cursor: pointer;
@@ -107,19 +107,19 @@ i {
     margin: 1.875rem;
 }
 
-.play-pause {
+.play {
     background: #de0742;
     opacity: 0.8;
     transition: all .2s ease-in-out;
 }
 
 .prev,
-.play-pause,
+.play,
 .next {
     background: #222121;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 10px, rgba(0, 0, 0, 0.18) 0px 5px 3px;
-    color: black;
+    /* color: black; */
     justify-content: space-between;
     padding: 25px;
     opacity: 0.8;
@@ -155,7 +155,7 @@ a:hover {
     color: #de0742;
 }
 
-.play-pause:hover {
+.play:hover {
     background-color: #de0742;
     opacity: 1.0;
     transform: scale(1.05);

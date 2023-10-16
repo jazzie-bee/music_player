@@ -74,7 +74,7 @@ div > i {
     width: 100%;
 }
 
-.song-name {
+.song {
     font-size: 2rem;
 }
 
@@ -95,7 +95,7 @@ div > i {
 }
 
 .current-time,
-.total-duration {
+.musicduration {
     padding: 10px;
 }
 

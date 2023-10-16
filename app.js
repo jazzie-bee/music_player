@@ -5,11 +5,11 @@ const music = document.querySelector('#audio');
 
 // Select everything that needs behaviors. I.e. song info needs to change w/ audio, slide seeker, timestamps and images need to change & play/pause icons
 const seekSlider = document.querySelector('.seek-slider');
-const songName = document.querySelector('.song-name');
+const songName = document.querySelector('.song');
 const artistName = document.querySelector('.artist');
 const trackCover = document.querySelector('.cover');
 const currentTime = document.querySelector('.current-time');
-const muiscDuration = document.querySelector('.total-duration')
+const musicDuration = document.querySelector('.musicduration')
 const playBtn = document.querySelector('.play');
 const forwardBtn = document.querySelector('.next');
 const backwardBtn = document.querySelector('.prev');
@@ -32,8 +32,19 @@ const setMusic = (i) => {
     }, 300);
 }
 
+setMusic(0);
+
 // Button functions
-// function playPause(){
+// let progress = document.getElementById('progress')
+// let song = document.getElementById('song')
+// let ctrlIcon = document.getElementById('ctrlIcon')
+
+// song.onloadedmetadata = function() {
+//     progress.max = song.duration;
+//     progress.value = song.currentTime;
+// }
+
+// function playTrack(){
 //     if(ctrlIcon.classList.contains('fa-circle-pause')){
 //         song.pause();
 //         ctrlIcon.classList.remove('fa-circle-pause');
@@ -46,10 +57,6 @@ const setMusic = (i) => {
 //     }
 // }
 
-// let playTrack = function(icon) {
-//     icon.classList.toggle('fa-circle-pause')
-// }
-
 // Play music event
 playBtn.addEventListener('click', () => {
     if(playBtn.className.includes('fa-circle-pause')){
@@ -59,7 +66,6 @@ playBtn.addEventListener('click', () => {
     }
     playBtn.classList.toggle('fa-circle-pause');
     cover.classList.toggle('fa-circle-play');
-    // $(this).find('i').toggleClass('fa-regular fa-circle-pause fa-4x');
 })
 
 // || Time formatting
@@ -72,7 +78,5 @@ const formatTime = (time) => {
     if(sec < 10){
         sec = `0${sec}`;
     }
-    return `${min} : ${sec}`;
+    return `${min}:${sec}`;
 }
-
-setMusic(0);

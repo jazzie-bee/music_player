@@ -83,6 +83,7 @@ i {
 
 .cover {
     background-image: url('images/futuristic-beat-joel-filipe-99neAF8kqhg-unsplash-square.jpg');
+    background-size: cover;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 9px 14px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
     display: block;

@@ -22,15 +22,23 @@ const backwardBtn = document.querySelector('.prev');
 
 //Setup music
 const setMusic = (i) => {
-    seekBar.value = 0;
-    let song = song[i];
+    seekSlider.value = 0;
+    let song = songs[i];
     currentMusic = i;
     music.src = song.path;
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
-    cover.style.backgroundImage = 'url(';{song.cover}')';
+    cover.style.backgroundImage = `url('${song.cover}')`;
+
+    currentTime.innerMusic = '00:00';
+    setTimeout(() => {
+        seekSlider.max = music.duration;
+        console.log(music.duration);
+    }, 300);
 }
+
+setMusic(0);
 
 // Button functions
 function playPause(){

@@ -64,6 +64,7 @@ div > i {
 }
 
 .seek-slider {
+    appearance: none;
     background: #656363;
     border-radius: 10px;
     cursor: pointer;

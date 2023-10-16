@@ -6,7 +6,7 @@ const music = document.querySelector('#audio');
 // Select everything that needs behaviors. I.e. song info needs to change w/ audio, slide seeker, timestamps and images need to change & play/pause icons
 const seekSlider = document.querySelector('.seek-slider');
 const songName = document.querySelector('.song-name');
-const trackArtist = document.querySelector('.track-artist');
+const artistName = document.querySelector('.artist');
 const trackCover = document.querySelector('.cover');
 const currentTime = document.querySelector('.current-time');
 const totalDuration = document.querySelector('.total-duration')
@@ -29,7 +29,7 @@ const setMusic = (i) => {
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
-    cover.style.backgroundImage = `url('${song.cover}')`;
+    trackCover.style.backgroundImage = `url('${song.cover}')`;
 
     currentTime.innerMusic = '00:00';
     setTimeout(() => {

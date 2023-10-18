@@ -48,22 +48,46 @@ const formatTime = (time) => {
     return `${min}:${sec}`;
 }
 
-// || Event listeners
+// || Event listeners; play/pause song
 playBtn.addEventListener('click', () => {
     playBtn.classList.toggle('fa-circle-pause');
 
     if(playBtn.className.includes('fa-circle-play')){
-        music.play();
+        music.pause();
     }
     if(playBtn.className.includes('fa-circle-pause')){
-        music.pause();
+        music.play();
     }
 })
 
 // || Previous song
-
+prevBtn.addEventListener('click', () => {
+    if(currentMusic <= 0){
+        currentMusic = songs.length - 1;
+    } else{
+        currentMusic--;
+    }
+    setMusic(currentMusic);
+    playBtn.click();
+})
 
 // || Next song
-
+nextBtn.addEventListener('click', () => {
+    if(currentMusic >= songs.length - 1){
+        currentMusic = 0;
+    } else{
+        currentMusic++;
+    }
+    setMusic(currentMusic);
+    playBtn.click();
+})
 
 // || Seek bar progress
+setInterval(() => {
+    seekSlider.value = music.currentTime;
+    currentTime.innerHTML = formatTime(music.currentTime);
+}, 500)
+
+seekSlider.addEventListener('change', () => {
+    music.currentTime = seekSlider.value;
+})

@@ -48,6 +48,12 @@ const formatTime = (time) => {
     return `${min}:${sec}`;
 }
 
+const playMusic = () => {
+    music.play();
+    playBtn.classList.remove('pause');
+    trackCover.classList.add('play');
+}
+
 // || Event listeners; play/pause song
 playBtn.addEventListener('click', () => {
     playBtn.classList.toggle('fa-circle-pause');
@@ -68,7 +74,7 @@ prevBtn.addEventListener('click', () => {
         currentMusic--;
     }
     setMusic(currentMusic);
-    playBtn.click();
+    playMusic();
 })
 
 // || Next song
@@ -79,7 +85,7 @@ nextBtn.addEventListener('click', () => {
         currentMusic++;
     }
     setMusic(currentMusic);
-    playBtn.click();
+    playMusic();
 })
 
 // || Seek bar progress

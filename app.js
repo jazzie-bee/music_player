@@ -92,6 +92,11 @@ nextBtn.addEventListener('click', () => {
 setInterval(() => {
     seekSlider.value = music.currentTime;
     currentTime.innerHTML = formatTime(music.currentTime);
+    if(Math.floor(music.currentTime) == Math.floor(seekSlider.max)){
+        nextBtn.click();
+        playBtn.classList.remove('pause');
+        trackCover.classList.add('play');
+    }
 }, 500)
 
 seekSlider.addEventListener('change', () => {

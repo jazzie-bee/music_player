@@ -18,11 +18,6 @@ body {
     width: 100vw;
 }
 
-div > i {
-    color: black;
-    cursor: pointer;
-}
-
 /* || Player body */
 .wrapper {
     align-items: center;
@@ -37,7 +32,7 @@ div > i {
 
 .player {
     background-color: #353333;
-    border: .06rem solid transparent;
+    border: none;
     border-color: #222121;
     border-radius: 5%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1.188rem 2.375rem, rgba(0, 0, 0, 0.22) 0 1rem .75rem;
@@ -108,19 +103,16 @@ div > i {
     margin: 1.875rem;
 }
 
-.play {
-    background: #de0742;
-    opacity: 0.8;
-    transition: all .2s ease-in-out;
-}
-
-.prev,
-.play,
-.next {
+.prev-btn,
+.play-btn,
+.next-btn {
+    align-items: center;
     background: #222121;
+    border: none;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 10px, rgba(0, 0, 0, 0.18) 0px 5px 3px;
-    /* color: black; */
+    color: black;
+    cursor: pointer;
     justify-content: space-between;
     padding: 25px;
     opacity: 0.8;
@@ -156,7 +148,7 @@ a:hover {
     color: #de0742;
 }
 
-.play:hover {
+.play-btn:hover {
     background-color: #de0742;
     opacity: 1.0;
     transform: scale(1.05);
@@ -175,7 +167,7 @@ a:hover {
     box-shadow: -200px 0 0 200px #de0742;
 }
 
-.prev:hover,
-.next:hover {
+.prev-btn:hover,
+.next-btn:hover {
     opacity: 2.0;
 }

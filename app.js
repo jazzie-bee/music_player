@@ -10,11 +10,12 @@ const artistName = document.querySelector('.artist');
 const trackCover = document.querySelector('.cover');
 const currentTime = document.querySelector('.current-time');
 const musicDuration = document.querySelector('.musicduration')
-const playBtn = document.querySelector('.play');
-const forwardBtn = document.querySelector('.next');
-const backwardBtn = document.querySelector('.prev');
+const musicContainer = document.getElementById('.player');
+const playBtn = document.querySelector('.fa-circle-play');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
-//Setup music
+// || Setup music details and time
 const setMusic = (i) => {
     seekSlider.value = 0;
     let song = songs[i];
@@ -34,40 +35,6 @@ const setMusic = (i) => {
 
 setMusic(0);
 
-// Button functions
-// let progress = document.getElementById('progress')
-// let song = document.getElementById('song')
-// let ctrlIcon = document.getElementById('ctrlIcon')
-
-// song.onloadedmetadata = function() {
-//     progress.max = song.duration;
-//     progress.value = song.currentTime;
-// }
-
-// function playTrack(){
-//     if(ctrlIcon.classList.contains('fa-circle-pause')){
-//         song.pause();
-//         ctrlIcon.classList.remove('fa-circle-pause');
-//         ctrlIcon.classList.add('fa-circle-play');
-//     }
-//     else{
-//         song.play();
-//         ctrlIcon.classList.add('fa-circle-pause');
-//         ctrlIcon.classList.remove('fa-circle-play');
-//     }
-// }
-
-// Play music event
-playBtn.addEventListener('click', () => {
-    if(playBtn.className.includes('fa-circle-pause')){
-        music.play();
-    } else{
-        music.pause();
-    }
-    playBtn.classList.toggle('fa-circle-pause');
-    cover.classList.toggle('fa-circle-play');
-})
-
 // || Time formatting
 const formatTime = (time) => {
     let min = Math.floor(time / 60);
@@ -80,3 +47,23 @@ const formatTime = (time) => {
     }
     return `${min}:${sec}`;
 }
+
+// || Event listeners
+playBtn.addEventListener('click', () => {
+    playBtn.classList.toggle('fa-circle-pause');
+
+    if(playBtn.className.includes('fa-circle-play')){
+        music.play();
+    }
+    if(playBtn.className.includes('fa-circle-pause')){
+        music.pause();
+    }
+})
+
+// || Previous song
+
+
+// || Next song
+
+
+// || Seek bar progress

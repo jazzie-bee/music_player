@@ -3,7 +3,7 @@ let currentMusic = 0;
 // Audio source
 const music = document.querySelector('#audio');
 
-// Select everything that needs behaviors. I.e. song info needs to change w/ audio, slide seeker, timestamps and images need to change & play/pause icons
+// Select everything that needs behaviors. I.e. song info needs to change w/ audio, slider, timestamps and images & buttons
 const seekSlider = document.querySelector('.seek-slider');
 const songName = document.querySelector('.song');
 const artistName = document.querySelector('.artist');
@@ -48,6 +48,22 @@ const formatTime = (time) => {
     return `${min}:${sec}`;
 }
 
+// || Seek bar progress
+setInterval(() => {
+    seekSlider.value = music.currentTime;
+    currentTime.innerHTML = formatTime(music.currentTime);
+    if(Math.floor(music.currentTime) == Math.floor(seekSlider.max)){
+        nextBtn.click();
+        playBtn.classList.remove('pause');
+        trackCover.classList.add('play');
+    }
+}, 500)
+
+seekSlider.addEventListener('change', () => {
+    music.currentTime = seekSlider.value;
+})
+
+// || Play music function
 const playMusic = () => {
     music.play();
     playBtn.classList.remove('pause');
@@ -86,19 +102,4 @@ nextBtn.addEventListener('click', () => {
     }
     setMusic(currentMusic);
     playMusic();
-})
-
-// || Seek bar progress
-setInterval(() => {
-    seekSlider.value = music.currentTime;
-    currentTime.innerHTML = formatTime(music.currentTime);
-    if(Math.floor(music.currentTime) == Math.floor(seekSlider.max)){
-        nextBtn.click();
-        playBtn.classList.remove('pause');
-        trackCover.classList.add('play');
-    }
-}, 500)
-
-seekSlider.addEventListener('change', () => {
-    music.currentTime = seekSlider.value;
 })

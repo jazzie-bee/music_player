@@ -12,44 +12,54 @@
 
 <body>
     <audio src="" id="audio"></audio>
-
-    <div class="wrapper">
+    <div class="container">
         <div class="player">
+            <nav>
+                <div class="share">
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="nowplaying">NOW PLAYING</div>
+                <div class="heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </nav>
 
-            <div class="music-info">
-                <div class="cover"></div>
-                <div class="song" id="song">Song Title</div>
-                <div class="artist">Track Artist</div>
+            <div class="details">
+                <div class="track-art"></div>
+                <div class="track-title">Track Title</div>
+                <div class="track-artist">Track Artist</div>
             </div>
 
             <div class="slider">
                 <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek-slider" id="progress">
-                <div class="musicduration">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
             </div>
 
-            <div class="controls">
-                <button class="prev-btn" onclick="prevBtn(this)">
+            <div class="buttons">
+                <div class="shuffle" onclick="shuffleTrack()">
+                    <i class="fa-solid fa-shuffle fa-2x"></i>
+                </div>
+                <div class="prev" onclick="prevTrack()">
                     <i class="fa-solid fa-backward fa-2x"></i>
-                </button>
-                <button class="play-btn" onclick="playBtn(this)">
-                    <i class="fa-regular fa-circle-play fa-4x"></i>
-                </button>
-                <button class="next-btn" onclick="nextBtn(this)">
+                </div>
+                <div class="playpause" onclick="playTrack()">
+                    <i class="fa-regular fa-circle-play fa-4x" onclick="changeIcon(this)"></i>
+                    <!-- <i class="fa-regular fa-circle-pause"></i> -->
+                </div>
+                <div class="next" onclick="nextTrack()">
                     <i class="fa-solid fa-forward fa-2x"></i>
-                </button>
+                </div>
+                <div class="list" onclick="">
+                    <i class="fa-solid fa-list-ul fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>
-
     <script src="data.js"></script>
-    <script src="app.js"></script>
-
     <footer>
-        <nav>
-            <a target="_blank" href="https://unsplash.com/collections/smoorwQxcew/music-player-images" class="unsplash">Images from Unsplash</a>            
-            <a target="_blank" href="https://pixabay.com/music/" class="pixabay">Music from Pixabay</a>
-        </nav>
+        <a href="" class="img">Images from Unsplash</a>
+        <a href="" class="music">Music from Pixabay</a>
     </footer>
 </body>
 

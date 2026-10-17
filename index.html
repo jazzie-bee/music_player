@@ -8,21 +8,22 @@
     <script src="https://kit.fontawesome.com/9db0402647.js" crossorigin="anonymous"></script>
     <title>Music Player</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="data.js"></script>
 </head>
 
 <body>
-    <audio src="" id="audio"></audio>
-    <div class="container">
-        <div class="player">
-            <nav>
+    <main class="container">
+        <section id="player">
+            <audio src="" id="audio"></audio>
+            <div class="header">
                 <div class="share">
                     <i class="fa-solid fa-up-right-from-square"></i>
                 </div>
-                <div class="nowplaying">NOW PLAYING</div>
+                <h1 class="nowplaying">NOW PLAYING</h1>
                 <div class="heart">
                     <i class="fa-solid fa-heart"></i>
                 </div>
-            </nav>
+            </div>
 
             <div class="details">
                 <div class="track-art"></div>
@@ -37,29 +38,29 @@
             </div>
 
             <div class="buttons">
-                <div class="shuffle" onclick="shuffleTrack()">
+                <button class="shuffle" onclick="shuffleTrack()">
                     <i class="fa-solid fa-shuffle fa-2x"></i>
-                </div>
-                <div class="prev" onclick="prevTrack()">
+                </button>
+                <button class="prev" onclick="prevTrack()">
                     <i class="fa-solid fa-backward fa-2x"></i>
-                </div>
-                <div class="playpause" onclick="playTrack()">
+                </button>
+                <button class="playpause" onclick="playTrack()">
                     <i class="fa-regular fa-circle-play fa-4x" onclick="changeIcon(this)"></i>
                     <!-- <i class="fa-regular fa-circle-pause"></i> -->
-                </div>
-                <div class="next" onclick="nextTrack()">
+                </button>
+                <button class="next" onclick="nextTrack()">
                     <i class="fa-solid fa-forward fa-2x"></i>
-                </div>
-                <div class="list" onclick="">
+                </button>
+                <button class="list">
                     <i class="fa-solid fa-list-ul fa-2x"></i>
-                </div>
+                </button>
             </div>
-        </div>
-    </div>
-    <script src="data.js"></script>
+        </section>
+    </main>
+
     <footer>
-        <a href="" class="img">Images from Unsplash</a>
-        <a href="" class="music">Music from Pixabay</a>
+        <a href="https://unsplash.com/" class="img">Images from Unsplash</a>
+        <a href="https://pixabay.com/" class="music">Music from Pixabay</a>
     </footer>
 </body>
 

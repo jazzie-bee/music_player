@@ -16,13 +16,13 @@ footer {
     background: #222121;
 }
 
-nav {
+/* || Class & ID styles */
+
+.header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
-
-/* || Class & ID styles */
 
 .buttons {
     align-items: center;
@@ -51,11 +51,7 @@ nav {
     padding: 10px;
 }
 
-.nowplaying {
-    font-size: 1em;
-}
-
-.player {
+#player {
     background-color: #353333;
     border: 1px solid transparent;
     border-color: #222121;
@@ -123,11 +119,7 @@ nav {
     transition: opacity .2s;
 }
 
-.shuffle,
-.prev,
-.playpause,
-.next,
-.list {
+button {
     background: #222121;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 10px, rgba(0, 0, 0, 0.18) 0px 5px 3px;
@@ -165,12 +157,12 @@ nav {
 
 .share:hover,
 .heart:hover {
-    opacity: 1.0;
+    opacity: 2.0;
 }
 
 .shuffle:hover,
 .prev:hover,
 .next:hover,
 .list:hover {
-    opacity: 1.0;
+    opacity: 2.0;
 }
